@@ -14,22 +14,9 @@ public class MongoDbOAuthApplication {
 		SpringApplication.run(MongoDbOAuthApplication.class, args);
 	}
 
-	@RequestMapping("/")
-	@ResponseBody
-	public Message displayMessage() {
-		return new Message();
-	}
-
-	static class Message {
-		private String content = "Greetings!";
-
-		public String getContent() {
-			return content;
-		}
-
-		public void setContent(String content) {
-			this.content = content;
-		}
-	}
+	@RequestMapping("/hello")
+    public String hello() {
+        return "Hello from OpenShift!";
+    }
 
 }
